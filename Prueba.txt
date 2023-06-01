@@ -1,1 +1,105 @@
-Hola
+#include<stdio.h>
+int main(){
+	float precios[5]={0,0,0,0,0};
+	int localidades[5]={0,0,0,0,0};
+	int cb[5]={0,0,0,0,0};
+	float t[5]={0,0,0,0,0};
+	int i,l;
+	float b,precio;
+	/*Llenado del vector precio*/
+	for(i=0;i<5;i++){
+		printf("Ingresamos el precio de la localidad %d:$",i+1);
+		scanf("%f",&precios[i]);
+	}
+	/*MENU*/
+	do{
+		printf("\n*****Menu de Estadio*****");
+		printf("\n1.Localidad 1");
+		printf("\n2.Localidad 2");
+		printf("\n3.Localidad 3");
+		printf("\n4.Localidad 4");
+		printf("\n5.Localidad 5");
+		printf("\n0.Salir");
+		printf("\n********************************");
+		printf("\nIngrese la localidad que desee:");
+		scanf("%d",&l);
+		/*COSTO*/
+		switch(l){
+			case 1:
+				printf("Ingrese la cantidad de boletos:");
+				scanf("%f",&b);
+				precio=b*precios[0];
+				printf("\n************************FACTURA************************");
+				printf("\n\tCANTIDAD\tLOCALIDAD\t\tTOTAL");
+				printf("\n\t %.1f\t\tLocalidad Uno\t\t$%.2f",b,precio);
+				printf("\n*******************************************************");
+				printf("\n");
+				cb[0]=cb[0]+b;
+				t[0]=cb[0]*precios[0];
+				break;
+			case 2:
+				printf("Ingrese la cantidad de boletos:");
+				scanf("%f",&b);
+				precio=b*precios[1];
+				printf("\n************************FACTURA************************");
+				printf("\n\tCANTIDAD\tLOCALIDAD\t\tTOTAL");
+				printf("\n\t %.1f\t\tLocalidad Dos\t\t$%.2f",b,precio);
+				printf("\n*******************************************************");
+				printf("\n");
+				cb[1]=cb[1]+b;
+				t[1]=cb[1]*precios[1];
+				break;
+			case 3:
+				printf("Ingrese la cantidad de boletos:");
+				scanf("%f",&b);
+				precio=b*precios[2];
+				printf("\n************************FACTURA************************");
+				printf("\n\tCANTIDAD\tLOCALIDAD\t\tTOTAL");
+				printf("\n\t %.1f\t\tLocalidad Tres\t\t$%.2f",b,precio);
+				printf("\n*******************************************************");
+				printf("\n");
+				cb[2]=cb[2]+b;
+				t[2]=cb[2]*precios[2];
+				break;
+			case 4:
+				printf("Ingrese la cantidad de boletos:");
+				scanf("%f",&b);
+				precio=b*precios[3];
+				printf("\n************************FACTURA************************");
+				printf("\n\tCANTIDAD\tLOCALIDAD\t\tTOTAL");
+				printf("\n\t %.1f\t\tLocalidad Cuatro\t\t$%.2f",b,precio);
+				printf("\n*******************************************************");
+				printf("\n");
+				cb[3]=cb[3]+b;
+				t[3]=cb[3]*precios[3];
+				break;
+			case 5:
+				printf("Ingrese la cantidad de boletos:");
+				scanf("%f",&b);
+				precio=b*precios[4];
+				printf("\n************************FACTURA************************");
+				printf("\n\tCANTIDAD\tLOCALIDAD\t\tTOTAL");
+				printf("\n\t %.1f\t\tLocalidad Cinco\t\t$%.2f",b,precio);
+				printf("\n*******************************************************");
+				printf("\n");
+				cb[4]=cb[4]+b;
+				t[4]=cb[4]*precios[4];
+				break;
+		}
+	
+    }while(l!=0);
+    printf("\nLa cantidad de boletos de la localidad 1:%d",cb[0]);
+	printf("\nLa cantidad de boletos de la localidad 2:%d",cb[1]);
+	printf("\nLa cantidad de boletos de la localidad 3:%d",cb[2]);
+	printf("\nLa cantidad de boletos de la localidad 4:%d",cb[3]);
+	printf("\nLa cantidad de boletos de la localidad 5:%d",cb[4]);
+	
+	printf("\n");
+	printf("\nLa cantidad de dinero de la localidad 1:$%.2f",cb[0]*precios[0]);
+	printf("\nLa cantidad de dinero de la localidad 2:$%.2f",cb[1]*precios[1]);
+	printf("\nLa cantidad de dinero de la localidad 3:$%.2f",cb[2]*precios[2]);
+	printf("\nLa cantidad de dinero de la localidad 4:$%.2f",cb[3]*precios[3]);
+	printf("\nLa cantidad de dinero de la localidad 5:$%.2f",cb[4]*precios[4]);
+	
+	printf("\n El total de la recaudacion del evento:$%.2f",cb[0]*precios[0]+cb[1]*precios[1]+cb[2]*precios[2]+cb[3]*precios[3]+cb[4]*precios[4]);
+}
